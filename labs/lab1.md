@@ -21,12 +21,14 @@ Password example: jtm1171zfG!1
 
 Once connected, you will be using Bash (the shell).  If you're unfamiliar with using Bash or Linux commands in general, please review this tutorial video series. There are many videos, but you'll want to focus on videos [1-10](https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DIrl8VXxqs8o%26list%3DPLLV_tmUM69VA4B0DKfNEBsaL9ARlpp__W%26index%3D2&data=05%7C02%7CJeffrey.Miller%40unh.edu%7C3753a6ba58c342aa545f08de5dd942c8%7Cd6241893512d46dc8d2bbe47e25f5666%7C0%7C0%7C639051384859528675%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=iwF0UJEwE%2Bgxw5hVeMMRGdmwJDls76KnLyi3UVrIXcw%3D&reserved=0)
 
-**Step 4.** Sign up for a GitHub account [here](https://github.com)
- From a from your GitHub account, **fork** this repository: https://github.com/jthmiller/gen711-811.git
+**Step 4. Sign up for a GitHub account [here](https://github.com)**
+Follow the instructions provided by GitHub
+
+**Step 5 From a from your GitHub account, **fork** this repository: https://github.com/jthmiller/gen711-811.git**
 ![fork image](../images/fork.png)
 - If you can't find the 'fork' button, you can try this [shortcut](https://github.com/jthmiller/gen711-811/fork)    
 
-**Step 5.** Clone the gen711-811 github in your home directory on RON:
+**Step 6. Clone the gen711-811 github in your home directory on RON:**
 
 
 
