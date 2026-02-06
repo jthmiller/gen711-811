@@ -1,0 +1,33 @@
+Lab 3 (2/6/26)
+pwd = print working directory, shows where you are. 
+ls = list directory
+cd ../ = back up one directory
+cd ../../ = back up further 
+$HOME
+clear = cleans the screen
+cd (name of directory) = move to a directory
+man ls = "manual list" gives you the operator's manual
+    alternative lookup = google your command options (e.g. biostar)
+q = quit, return to command line
+ls -lrth = additional information 
+head filename.fastq = prints 10 lines of the file to the screen
+cat filename.fastq = prints the entire file to the screen
+ls | grep 'something' = find everything in the folder with 'something'
+cd ~ = brings you back to your home directory
+**exam question: relative path = go straight to a directory (e.g. cd shellpath) vs absolute path = typing in the whole path. 
+tab once = autocomplete
+tab twice = gives you all the options
+rm = delete the thing. can't get it back. 
+rm -fR nameoffile = delete the folder and everything in it. 
+git clone httplinkofgithubsitepastehere = clone git hub
+up arrow = scroll through previous commands
+history = prints history
+grep 'thing' filename.fastq = search function to search for something within a file
+    ^@ = search for the @ symbol at the beginning of a line
+> filename.txt = saves the results as a txt file
+ls *fastq = print anything that has the fastq ending
+* = wildcard, sub anything into this spot. 
+ls /bin = can search within the bin folder w/o being actually in that folder. 
+wc = word count
+wc -l = count the number of lines
+ls /bin/ | grep '^c' | wc -l = find and count files that start with c
