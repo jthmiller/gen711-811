@@ -56,3 +56,6 @@ To navigate back to a previous command and run it
 
 ../
     navigates back 
+
+BACKUP
+mv *backup.fastq backup/
