@@ -24,13 +24,17 @@ exercises: 15
 
 ### EXERCISE 1: NAVIGATION PRACTICE
 Navigate to your untrimmed_fastq directory in one command
+cd gen711-811/shell_data/untrimmed_fastq
 
 ### EXERCISE 2: WILDCARDS
 What would the output look like if the wildcard could *not* be matched? Compare the outputs
+ls *fq
+ls: cannot access '*fq': No such file or directory
 
 ### EXERCISE 3: NAVIGATING PRACTICE
 Navigate to your home directory. From there, list the contents of the untrimmed_fastq directory.
 
+ls gen711-811/shell_data/untrimmed_fastq
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -65,19 +69,27 @@ First navigate to the shell_data directory. There is a hidden directory within t
 
 Hint: hidden files and folders in Unix start with ., for example .my_hidden_directory
 
-What is the hidden file name in the hidden directory?
+What is the hidden file name in the hidden directory? youfoundit.txt
+The command is ls -a
 
 ### EXERCISE 5: HISTORY
 Find the line number in your history for the command that listed all the .sh files in /usr/bin. Rerun that command.
+history
+!110
 
 ### EXERCISE 6: FILE CONTENTS
 Print out the contents of the ~/shell_data/untrimmed_fastq/SRR097977.fastq file. What is the last line of the file?
+The command is tail SRR097977.fastq
++SRR097977.249 209DTAAXX_Lenski2_1_7:8:3:441:292 length=36
+C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$
 
 ### EXERCISE 7: PATHS
 From your home directory, and without changing directories, use one short command to print the contents of all of the files in the ~/shell_data/untrimmed_fastq directory.
 
-### EXERCISE 8: LESS
+
+### EXERCISE 8: LESS (Sequence = TTTTT)
 What are the next three nucleotides (characters) after the first instance of the sequence quoted above?
+CAC
 
 ### File Permissions Help
 The first part of the output for the `-l` flag gives you information about the file's current permissions. There are ten slots in the

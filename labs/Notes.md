@@ -1,4 +1,4 @@
-2/6/26 Lab Notes
+2/6/26 Lab 3 Notes
 pwd means print working directory
 ls means list and will show everything that is in your directory
 clear clears the terminal
@@ -13,3 +13,14 @@ cat prints the whole file to the screen
 to get out of the directory, us cd ../
 cd ../ is stackable, you can keep doing it to get to the home directory
 a shortcut to get back to the home directory is cd ~
+2/13/26 Lab 4 Notes
+Change directories by typing cd and then the directory you want to go to
+Typing cd by itself goes straight to your home directory
+The * is the wildcard
+Doing ls -laF gives the (l) long format, (a) all of it, (F) and the format
+You can rerun a code from history by typing history, hit enter, then do ! followed by the number with the command
+grep looks through a file and the first thing you put after grep is what you are searching for (might want to use quotes)
+less looks through files and lets you scroll through it rather than printing it across the whole screen
+to quit, hit q
+cp means copy
+mkdir means make directory
