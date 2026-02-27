@@ -31,6 +31,8 @@ What would the output look like if the wildcard could *not* be matched? Compare 
 ls *fq
 ls: cannot access '*fq': No such file or directory
 
+ls *fq
+
 ### EXERCISE 3: NAVIGATING PRACTICE
 Navigate to your home directory. From there, list the contents of the untrimmed_fastq directory.
 
@@ -71,6 +73,8 @@ Hint: hidden files and folders in Unix start with ., for example .my_hidden_dire
 
 What is the hidden file name in the hidden directory? youfoundit.txt
 The command is ls -a
+
+
 
 ### EXERCISE 5: HISTORY
 Find the line number in your history for the command that listed all the .sh files in /usr/bin. Rerun that command.
