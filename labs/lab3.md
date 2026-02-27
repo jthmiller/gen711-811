@@ -77,7 +77,6 @@ To change directories, use 'cd' and then hit tab two times to see directories in
 #### 2. How many programs in /bin 
 2. Do each of the following tasks from your current directory using a single ls command for each:
     - List all of the files in /bin that start with the letter ‘c’.
-    ls safdasfsla
     - List all of the files in /bin that contain the letter ‘a’.
     - List all of the files in /bin that end with the letter ‘o’.
     - Bonus: List all of the files in /bin that contain the letter ‘a’ or the letter ‘c’.
@@ -90,4 +89,4 @@ Contain the letter ‘a’ or the letter ‘c’ ____
 
 #### What command/commands would you use to find the line number in your history for the command that listed all the '.fastq' files using the absolute path. Paste your answer below.
 
-ls gdsfgsd 
+ls
