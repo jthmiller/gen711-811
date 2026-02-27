@@ -11,29 +11,29 @@ output: pdf_document
 2. Redirection and pipes lesson
 3. Script writing
 
-:::::::::::::::::::::::::::::::::::::::: review
+## review
 which for programs
 conda environments
 chmod for permissions
 fastqc
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
+
+## keypoints
 Employ the grep command to search for information within files.
 Print the results of a command to a file.
 Construct command pipelines with two or more stages.
 Use for loops to run the same command for several input files.
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions for practical
+
+## questions for practical
 How can I search within files?
 How can I combine existing commands to do new things?
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-:::::::::::::::::::::::::::::::::::::::: Nucleotide abbreviations
+
+## HELP: Nucleotide abbreviations
 The four nucleotides that appear in DNA are abbreviated A, C, T and G. Unknown nucleotides are represented with the letter N. An N appearing in a sequencing file represents a position where the sequencing machine was not able to confidently determine the nucleotide in that position. You can think of an N as being aNy nucleotide at that position in the DNA sequence.
-::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Exercise 1
 
@@ -73,7 +73,7 @@ We want the script to tell us when it's done.
 
 
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
+## keypoints
 
 - `grep` is a powerful search tool with many options for customization.
 - `>`, `>>`, and `|` are different ways of redirecting output.
@@ -83,7 +83,7 @@ We want the script to tell us when it's done.
 - `for` loops are used for iteration.
 - `basename` gets rid of repetitive parts of names.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 
@@ -106,4 +106,3 @@ or
 $ cd
 $ curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
 ```
-::::::::::::::::::::::::::::::::::::::::::::::::::
