@@ -58,3 +58,20 @@ do
 echo -e "name-$(basename ${filename} .fastq)"
 echo -e "mv ${filename} ${name}_2026.txt"
 done
+
+LAB 7 NOTES
+
+Metadata: E. Coli is one of the first model orgnaisms used.
+
+You really want to have a good METADATA
+Row: Samples
+Column: Different pieces of ionformation (Metadata metrics including collection date, treatment group, # of cells).
+
+Do NOT use special c haracters in the METADATA files.
+
+wget = "get from the web" command
+
+For multicursor: Command D to a highlight allows for a multicrusor features on what's hightlighted specifically.
+
+^... = you can grep for letters and words that are specifically at the begininng of any lines.
+$ = short for END OF LINE
