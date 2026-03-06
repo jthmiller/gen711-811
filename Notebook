@@ -96,3 +96,23 @@ to find the storage amount for the fastq file
 
 change mode?
         chmod
+
+wget or curl with the website at the end- both grab files from web and save it to 
+
+move command 
+        mv 
+redirect command 
+
+cat "good link" > "bad link"
+    this redirects it to the other one, but combines them 
+
+
+    any questions about the commands, use "man"
+
+    head -n1 -gives first line  
+    pipe=|
+    tr - find and replace --> use '' for what to find and what to replace 
+
+    want to find 'plus' from last line
+
+    command f to replace- arrow on right then the logo on the right to replace all
