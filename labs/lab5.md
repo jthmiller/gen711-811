@@ -36,12 +36,17 @@ Quality score:    01........11........21........31........41
 
 *Warm ups: What is the last read in the SRR2584863_1.fastq file? How confident are you in this read?
 A: 
+@SRR097977.249 209DTAAXX_Lenski2_1_7:8:3:441:292 length=36
+GGGTAGGTATTACTCAGGACGAGGCGGTCGTGCCAC
++SRR097977.249 209DTAAXX_Lenski2_1_7:8:3:441:292 length=36
+C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$
+5/10 confidence
 
 How big are your fastqs? (Hint: Look at the options for the ls command to see how to show file sizes.)
 - hint, it involves 'ls'. See if you can do it using a relative and absolute path
 - another hint: There is an option to make it easy to read the file size. Use one of the two methods to find it
 A:
-
+    
 
 
 ### EXERCISE 5.1

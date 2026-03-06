@@ -1,0 +1,118 @@
+1. What are 3 ways to change directories to your home directory from the untrimmed_fastq directory?
+    1. cd (tab, tab)
+    2. cd ~
+    3. cd /home/users/kmf1129
+
+2. How many programs are in /bin?
+        1624
+        ls /bin | wc -l
+
+3. How would you list all of the folder in /bin that...
+
+    a. start with the letter C?
+        ls /bin/c*
+            (start with has the asterics AFTER)
+            if you wanted the number, add | wc -l for word count, list
+
+    b. contain the letter A?
+        ls /bin/*a*
+                (contain has the asterics before and after)
+                there are 633!!
+    c. end with the letter o?
+        ls /bin/*o
+                (end with has the asterics BEFORE)
+    
+    d. contain both the letters C and A?
+        ls /bin/*c* /bin/*a* 
+                there are 1157
+
+What command/commands would you use to find the line number in your history for the command that listed all the '.fastq' files using the absolute path. 
+    history | grep -n '\.fastq'
+
+**** "ls" lists files and directories
+**** "history | grep" lists prior commands or code that has been typed
+
+Navigate to your untrimmed_fastq directory in one command
+cd gen711-811/shell_data/untrimmed_fastq/
+    use the tab key to autopopulate the files quickly
+
+To list hidden files/directories 
+    ls -la
+    ls -a
+    ls --all
+    ls .*
+        this ".*" will display anything "hidden" and show everything in it
+
+    the l will give the long info
+        ls -laF
+             "drwxr-xr-x." 
+                shows the viewer permissions
+
+    .hidden
+    youfoundit.txt
+
+To navigate back to a previous command and run it
+    !n where n=line number
+
+../
+    navigates back 
+
+BACKUP
+mv *backup.fastq backup/
+
+
+Lab 5 notes
+
+cd gen711-811/shell_data/untrimmed_fastq/
+        navigates to untrimmed folder
+
+@SRR097977.249 209DTAAXX_Lenski2_1_7:8:3:441:292 length=36
+GGGTAGGTATTACTCAGGACGAGGCGGTCGTGCCAC
++SRR097977.249 209DTAAXX_Lenski2_1_7:8:3:441:292 length=36
+C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$
+
+    Title
+    Sequences
+    + and then the title again for space
+    quality score?
+
+issues with less when accessing fastq
+    if using the less after accessing using "q"
+
+    concatinate - print whole file to screen
+        two fast qs and conbine them cat command file 1 file 2
+
+head- first few lines
+-n#
+
+language is bash
+
+To list the amount of lines in fast q
+        wc -l
+
+to find the storage amount for the fastq file 
+        ls -lrth (fastq file)
+
+
+change mode?
+        chmod
+
+wget or curl with the website at the end- both grab files from web and save it to 
+
+move command 
+        mv 
+redirect command 
+
+cat "good link" > "bad link"
+    this redirects it to the other one, but combines them 
+
+
+    any questions about the commands, use "man"
+
+    head -n1 -gives first line  
+    pipe=|
+    tr - find and replace --> use '' for what to find and what to replace 
+
+    want to find 'plus' from last line
+
+    command f to replace- arrow on right then the logo on the right to replace all
