@@ -22,13 +22,17 @@ Instructions for starting group projects can be found [here](https://github.com/
 
 ```bash
 wget ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
+
+wget https://github.com/datacarpentry/wrangling-genomics/main/episodes/files/Ecoli_metadata_composite.csv
+
+
+wget https://raw.githubusercontent.com/datacarpentry/wrangling-genomics/refs/heads/main/episodes/files/Ecoli_metadata_composite.csv
 ```
 
 or
 
 ```bash
-$ cd
-$ curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
+curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
 ```
 
 # Part A
