@@ -143,6 +143,12 @@ grep plus EcoliMetaData.csv | wc -l
 
 Shows all lines that have plus in the mutator column as well though, so doesn't work properly
 
+cut -f12 -d',' EcoliMetaData.csv | sort | uniq -c
+
+grep plus$ EcoliMetaData.csv | wc -l
+
+^[query] looks at the start of lines, [query]$ looks at the end of lines
+
 4. How many hypermutable mutants have been recorded in **Ara-3**?
 
 cut -f6 -d',' EcoliMetaData.csv | sort | uniq -c
