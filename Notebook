@@ -116,3 +116,106 @@ cat "good link" > "bad link"
     want to find 'plus' from last line
 
     command f to replace- arrow on right then the logo on the right to replace all
+
+
+
+    commands and their purpose
+
+    * wildcard - used for filling in blanks
+        cat SRR*... 
+                shows code that all files with SRR will be run
+    
+    > redirection operator
+        will dump before text to new file 
+
+        cat SRR*_fastq/summary.txt > fastq_summaries.txt
+
+    >> ammend - adds data to the bottom of file
+
+    cat, less, heads, and tails will view file content
+
+    cat views all
+    less views "less" content
+    head views top part
+    tails views bottom part
+
+    chmod will change the file permisions 
+        r '(read)
+        w "write"
+        x "execute"
+
+        first part is user
+        second part is group
+        third part is others
+
+    ls -l lists files and directories
+        blue- directory- you can cd to it
+        white/grey- regulr file - you can cat,less,head,tail it
+        red- compressed file - must unzip first
+        green- executable file
+
+    grep- searching within files
+
+        must use "" for each command or use $ before grep
+
+        -B # will show lines before
+        -A # will show lines after
+        -c will show how many 
+
+    | the pipe!
+
+        takes the output of one command and sends it as the input of a second command
+
+        example
+            how many sequences are in this file?
+
+                cat SRR098026.fastq | wc -l
+
+    cut will remove 
+    -d is the deliminator with a given ''
+    -f# is the fields at which there was a cut 
+
+    for example, 
+    ls *.txt | cut -d'.' -f1
+
+    this takes all files with .txt at the end and cuts it at the period
+    then it will list the field 1, so the field before the period, field 2 would list txt
+
+    LOOPS
+
+    $ for 
+    >do
+    >
+    >mv
+    >done 
+
+    for example
+    
+    $ for filename in *.txt
+    >do> name=$(basename ${filename} .txt)
+    >mv ${filename} ${name}_2019.txt
+    > done
+
+$ for starts the loop, 
+    $ for filename in *.txt 
+        looks for every file in this folder that ends in .txt and puts 
+        in a temperary bucket called filename 
+
+>do>  action
+
+name=$ (down below)
+    creates a variable
+
+(basename ${filename} .txt)
+
+    whats in the perentheses before
+
+    strips the extension, takes the current file (ex. sample_1.txt) and 
+    removes the .txt (sample_1)
+
+>mv ${filename} ${name}_2019.txt
+
+    renames -new name + _2019.txt
+    for example sample_1_2019.txt
+
+>done finalizes changes and closes loop
