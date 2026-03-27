@@ -59,7 +59,7 @@ A:
 
 ls -lh: human readable format to show file sizes
 
-Whule in untrimmed_fastq, I just did ls -lh to see the file size for all of the files
+While in untrimmed_fastq, I just did ls -lh to see the file size for all of the files
 
 Could do ls -lh SRR097977.fastq to specfically see the file in question (relative path)
 
