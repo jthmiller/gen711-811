@@ -91,13 +91,13 @@ ls ~/analysis/to_blast/
 
 ### 11. What is the 100th line in the Sample1.fasta file? (hint: the 'head' command is one way to do this- but you may need to specify an option) (2 points)
 
-head -100 SRR09977.fasta | tail -1
+head -100 ~/anaylsis/to_blast/SRR09977.fasta | tail -1
 
 GCGGAGCTGGTGATTGGCGAACTGCTGCTGCTATTT
 
 ### 12. Run md5sum on Sample1.fasta (md5sum Sample1.fasta). Then, run it again, but redirect the output to a new file called 'my_md5sums.txt'.  (2 points)
 
-md5sum SRR097977.fasta 
+md5sum ~/analyis/to_blast/SRR097977.fasta 
 
 2fc2f7165ff31c0930a77909f20ba7c0  SRR097977.fasta
 
@@ -117,3 +117,7 @@ conda activate genomics
 
 fastqc on fasta file, won't run because it lacks the quality score
 
+d rwx rwx rwx
+directory - user - group - others
+
+chmod ugo-w Test1
