@@ -36,12 +36,17 @@ Quality score:    01........11........21........31........41
 
 *Warm ups: What is the last read in the SRR2584863_1.fastq file? How confident are you in this read?
 A: 
+@SRR097977.249 209DTAAXX_Lenski2_1_7:8:3:441:292 length=36
+GGGTAGGTATTACTCAGGACGAGGCGGTCGTGCCAC
++SRR097977.249 209DTAAXX_Lenski2_1_7:8:3:441:292 length=36
+C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$
+5/10 confidence
 
 How big are your fastqs? (Hint: Look at the options for the ls command to see how to show file sizes.)
 - hint, it involves 'ls'. See if you can do it using a relative and absolute path
 - another hint: There is an option to make it easy to read the file size. Use one of the two methods to find it
 A:
-
+    
 
 
 ### EXERCISE 5.1
@@ -94,7 +99,29 @@ Replace this with code
 
 ### Explore the fastqc output. Which samples failed at least one of FastQC’s quality tests? What test(s) did those samples fail?
 
-
+PASS    Basic Statistics        SRR097977.fastq
+PASS    Basic Statistics        SRR097977.fastq
+FAIL    Per base sequence quality       SRR097977.fastq
+PASS    Per tile sequence quality       SRR097977.fastq
+PASS    Per sequence quality scores     SRR097977.fastq
+FAIL    Per base sequence content       SRR097977.fastq
+FAIL    Per sequence GC content SRR097977.fastq
+PASS    Per base N content      SRR097977.fastq
+PASS    Sequence Length Distribution    SRR097977.fastq
+PASS    Sequence Duplication Levels     SRR097977.fastq
+WARN    Overrepresented sequences       SRR097977.fastq
+PASS    Adapter Content SRR097977.fastq
+PASS    Basic Statistics        SRR098026.fastq
+FAIL    Per base sequence quality       SRR098026.fastq
+PASS    Per tile sequence quality       SRR098026.fastq
+FAIL    Per sequence quality scores     SRR098026.fastq
+FAIL    Per base sequence content       SRR098026.fastq
+FAIL    Per sequence GC content SRR098026.fastq
+FAIL    Per base N content      SRR098026.fastq
+PASS    Sequence Length Distribution    SRR098026.fastq
+PASS    Sequence Duplication Levels     SRR098026.fastq
+FAIL    Overrepresented sequences       SRR098026.fastq
+:
 :::::::::::::::::::::::::::::::::::::::: keypoints
 - Use `which` for commands/programs to see where they are installed
 - You can view file permissions using `ls -l` and change permissions using `chmod`.
