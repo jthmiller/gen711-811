@@ -41,27 +41,70 @@ The four nucleotides that appear in DNA are abbreviated A, C, T and G. Unknown n
   Have your search return all matching lines and the name (or identifier) for each sequence
   that contains a match.
 
+ @SRR098026.245 HWUSI-EAS1599_1:2:1:2:801 length=35
+GNATNACCACTTCCAGTGCTGANNNNNNNGGGAT
+
 2. Search for the sequence `AAGTT` in both FASTQ files.
   Have your search return all matching lines and the name (or identifier) for each sequence
   that contains a match.
 
+  SRR097977.fastq-@SRR097977.11 209DTAAXX_Lenski2_1_7:8:3:247:351 length=36
+SRR097977.fastq:GATTGCTTTAATGAAAAAGTCATATAAGTTGCCATG
+--
+SRR097977.fastq-@SRR097977.67 209DTAAXX_Lenski2_1_7:8:3:544:566 length=36
+SRR097977.fastq:TTGTCCACGCTTTTCTATGTAAAGTTTATTTGCTTT
+--
+SRR097977.fastq-@SRR097977.68 209DTAAXX_Lenski2_1_7:8:3:724:110 length=36
+SRR097977.fastq:TGAAGCCTGCTTTTTTATACTAAGTTTGCATTATAA
+--
+SRR097977.fastq-@SRR097977.80 209DTAAXX_Lenski2_1_7:8:3:258:281 length=36
+SRR097977.fastq:GTGGCGCTGCTGCATAAGTTGGGTTATCAGGTCGTT
+--
+SRR097977.fastq-@SRR097977.92 209DTAAXX_Lenski2_1_7:8:3:353:318 length=36
+SRR097977.fastq:GGCAAAATGGTCCTCCAGCCAGGCCAGAAGCAAGTT
+--
+SRR097977.fastq-@SRR097977.139 209DTAAXX_Lenski2_1_7:8:3:703:655 length=36
+SRR097977.fastq:TTTATTTGTAAAGTTTTGTTGAAATAAGGGTTGTAA
+--
+SRR097977.fastq-@SRR097977.238 209DTAAXX_Lenski2_1_7:8:3:592:919 length=36
+SRR097977.fastq:TTCTTACCATCCTGAAGTTTTTTCATCTTCCCTGAT
+--
+SRR098026-backup.fastq-@SRR098026.158 HWUSI-EAS1599_1:2:1:1:1505 length=35
+SRR098026-backup.fastq:GNNNNNNNNCAAAGTTGATCNNNNNNNNNTGTGCG
+--
+SRR098026.fastq-@SRR098026.158 HWUSI-EAS1599_1:2:1:1:1505 length=35
+SRR098026.fastq:GNNNNNNNNCAAAGTTGATCNNNNNNNNNTGTGCG
+[kmf1129@ron untrimmed_fastq]$ 
+
 3. How do the search results differ when matching in one file vs. both files? If you wanted to keep the original FASTQ format, how would you get around this?
 
+It starts with the file name and not the identifier, use -h for hide file name
+
 4. Make a file called 'bad-reads.fastq' made up of reads with 10 Ns or more in a row
+
+
 
 
 
 ## Exercise 2
 
 How many sequences are there in `SRR098026.fastq`? Remember that every sequence is formed by four lines.
+804
+200
 
 ## Exercise 3
 
 How many sequences in `SRR098026.fastq` contain at least 3 consecutive Ns?
+249
 
 ## Exercise 4
 
 Print the file prefix of all of the `.txt` files in our current directory.
+
+fastqc_summaries
+headerlines
+line-counts
+samplenames
 
 ## Exercise 5
 

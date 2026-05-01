@@ -1,0 +1,334 @@
+**basic commands (pwd, cd, mkdir, ls, cp, mv, rm)
+
+pwd
+    print working directory, shows current location
+
+cd 
+    change directory
+
+mkdir 
+    make directory
+    use -p and slashes between to create parent/nested directories
+
+        mkdir -p genetics/lab 
+            this will create one working directory "genetics" with a directory "lab" within it
+
+ls 
+    list files and directories
+        -f shows types
+        -l long format
+        -a hidden files 
+        -h human readable sizes
+        -lrth shows file size
+
+    
+        blue- directory- you can cd to it
+        white/grey- regular file - you can cat,less,head,tail it
+        red- compressed file - must unzip first
+        green- executable file
+
+wc
+    to list the number of files or lines
+    
+        wc -l shows the number of files within directory or folder
+
+        ls code | wc -l
+            lists the number of folders within code
+
+cp 
+    copy  command+source+destination
+
+    cp -r 
+        copies directories
+    
+    if you want to move a file to a directory
+        cp filename directory/
+
+    if you want to move a folder to a directory
+        cp -p folder directory/
+
+    if you want to copy a file to current directory under a new name
+        cp oldfoldername newfoldername 
+
+    move a file to new directory and name at same time
+        cp olderfoldername directory/newfoldername 
+    
+mv 
+    move and rename , removes old file destination
+    make sure the current directory is destination
+
+    just rename folders
+         mv oldfoldername/ newfoldername/
+
+    move two at once
+         mv oldfile.txt oldfile2.txt folder/
+
+
+    
+rm
+	Remove 
+	
+    remove files
+		rm file.fastq
+
+	remove directories
+		rm  -r  old_results_folder/
+
+	get prompted with a safety net,  -i
+		rm  -i  *.fastq
+
+	force -f
+		forces the remove command without safety net
+
+
+WHAT IS * ?
+
+    this is the special wildcard
+
+    if * is BEFORE something, it will tell give you all the files/directories that end with that
+        ls /bin/*.txt    
+                lists all the files with .txt at the end 
+    
+    if * is AFTER something, it will tell give you all the files that start with that
+        ls /bin/file*
+                lists all the "file" 
+    
+    if * is before and after, it will give you all of the things that contain what is between the *
+        ls /bin/*a*
+                lists all the things in bin containing a
+
+
+more specific commands, (chmod, >, >>, grep, |)
+
+chmod 
+    change file permissions
+        r read
+        w write
+        x execute
+
+    first part is user (u)
+    second part is group (g)
+    third part is others (o)
+
+    - is remove permissions
+    + is add permissions
+
+    chmod +x script.sh 
+        adds execute permissions for everyone
+    
+    chmod g+r script.sh
+        adds permissions for group to read
+    
+    chmod u-w script.sh
+        removes permissions for the user to write
+
+    how to see viewer permissions?
+         ls -laF
+
+grep
+    searching within files
+
+        must use "" for each command or use $ before grep
+
+        -B # will show lines before
+        -A # will show lines after
+        -c will show how many 
+
+> 
+    redirection operator
+    will dump before text to new file
+
+    cat oldfile > newfile
+
+>>
+    ammend
+    adds moving data to the bottom of new file
+
+    cat oldfile >> newfile 
+        keeps oldfile 
+
+
+WHEN VIEWING A FAST Q
+
+    cat views all
+    less views "less" content
+    head views top part
+    tails views bottom part
+
+    Fastq format:
+        Title
+        Sequences
+        + and then the title again for space
+        quality score
+
+***TIPS
+
+q to exit
+command c to exit 
+
+
+
+What command/commands would you use to find the line number in your history for the command that listed all the '.fastq' files using the absolute path. 
+    history | grep -n '\.fastq'
+
+**** "ls" lists files and directories
+**** "history | grep" lists prior commands or code that has been typed
+
+
+
+
+
+
+
+To navigate back to a previous command and run it
+    !n where n=line number
+
+../
+    navigates back 
+
+
+
+
+
+
+
+  
+
+    concatinate - print whole file to screen
+        two fast qs and conbine them cat command file 1 file 2
+
+head- first few lines
+-n#
+
+
+
+To list the amount of lines in fast q
+        wc -l
+
+
+
+
+
+
+
+wget or curl with the website at the end- both grab files from web and save it to 
+
+
+
+cat "good link" > "bad link"
+    this redirects it to the other one, but combines them 
+
+
+    any questions about the commands, use "man"
+
+    head -n1 -gives first line  
+    pipe=|
+    tr - find and replace --> use '' for what to find and what to replace 
+
+    want to find 'plus' from last line
+
+    command f to replace- arrow on right then the logo on the right to replace all
+
+
+
+ 
+    
+    
+
+
+ 
+
+ 
+
+   
+
+   
+
+    | the pipe!
+
+        takes the output of one command and sends it as the input of a second command
+
+        example
+            how many sequences are in this file?
+
+                cat SRR098026.fastq | wc -l
+
+    cut will remove 
+    -d is the deliminator with a given ''
+    -f# is the fields at which there was a cut 
+
+    for example, 
+    ls *.txt | cut -d'.' -f1
+
+    this takes all files with .txt at the end and cuts it at the period
+    then it will list the field 1, so the field before the period, field 2 would list txt
+
+    LOOPS
+
+    $ for 
+    >do
+    >
+    >mv
+    >done 
+
+    for example
+    
+    $ for filename in *.txt
+    >do> name=$(basename ${filename} .txt)
+    >mv ${filename} ${name}_2019.txt
+    > done
+
+$ for starts the loop, 
+    $ for filename in *.txt 
+        looks for every file in this folder that ends in .txt and puts 
+        in a temperary bucket called filename 
+
+>do>  action
+
+name=$ (down below)
+    creates a variable
+
+(basename ${filename} .txt)
+
+    whats in the perentheses before
+
+    strips the extension, takes the current file (ex. sample_1.txt) and 
+    removes the .txt (sample_1)
+
+>mv ${filename} ${name}_2019.txt
+
+    renames -new name + _2019.txt
+    for example sample_1_2019.txt
+
+>done finalizes changes and closes loop
+
+adding empty directories 
+
+
+
+branch help
+
+clean working directory, branch is behind or ahead of main branch 
+git stash
+    * shelve your uncomitted changes
+git fetch origin
+
+git rebase origin/main  
+    * or: git merge orgin/main
+git stash pop
+    #re-aply your changes on top
+
+
+
+run something in background
+    command z
+        pauses code
+    bg 
+        background
+    disown -h
+        gets back to terminal and runs code in background
+    
+
+screen
+    pause and go back to terminal
+    make sure to define variables again
