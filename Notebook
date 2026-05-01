@@ -1,4 +1,4 @@
-**basic commands (pwd, cd, mkdir, ls, cp, mv, rm)
+***basic commands (pwd, cd, mkdir, ls, cp, mv, rm)
 
 pwd
     print working directory, shows current location
@@ -30,7 +30,7 @@ ls
 wc
     to list the number of files or lines
     
-        wc -l shows the number of files within directory or folder
+        wc -l lists the lines of text of a defined file
 
         ls code | wc -l
             lists the number of folders within code
@@ -45,7 +45,7 @@ cp
         cp filename directory/
 
     if you want to move a folder to a directory
-        cp -p folder directory/
+        cp -r folder directory/
 
     if you want to copy a file to current directory under a new name
         cp oldfoldername newfoldername 
@@ -81,24 +81,8 @@ rm
 		forces the remove command without safety net
 
 
-WHAT IS * ?
 
-    this is the special wildcard
-
-    if * is BEFORE something, it will tell give you all the files/directories that end with that
-        ls /bin/*.txt    
-                lists all the files with .txt at the end 
-    
-    if * is AFTER something, it will tell give you all the files that start with that
-        ls /bin/file*
-                lists all the "file" 
-    
-    if * is before and after, it will give you all of the things that contain what is between the *
-        ls /bin/*a*
-                lists all the things in bin containing a
-
-
-more specific commands, (chmod, >, >>, grep, |)
+***more specific commands, (chmod, >, >>, grep, |, echo, cut)
 
 chmod 
     change file permissions
@@ -126,20 +110,34 @@ chmod
          ls -laF
 
 grep
-    searching within files
+    searching within files, usually within fastq files
 
-        must use "" for each command or use $ before grep
+        must use "" for each phrase to find (or use $ before grep- less common)
+        after "" ask for which file grep is searching within
+            grep -letter # "phrase" file.fastq
 
-        -B # will show lines before
-        -A # will show lines after
-        -c will show how many 
+        -B # will show # of lines before phrase
+        -A # will show # of lines after phrase
+        -C # will show # of lines before and after phrase
+        -c will count how many reads of the phrase exists
+        -v will show everything but the phrase
+        -n tells which line the phrase is on
+        -i shows each time the phrase occurs, capital or lowercase
 
-> 
-    redirection operator
-    will dump before text to new file
+        ^ (start of phrase) will find lines starting with phrase    
+            grep "^@SRR" file.fastq
+        
+        $ (end of line) will find lines ending with phrase
+            grep "TTT$" file.fastq
+
+        "history | grep "" " lists the lines of "" that has been previously typed
+
+
+>  redirection operator
+    will dump before text to new file, deleting old text
 
     cat oldfile > newfile
-
+    deletes oldfile
 >>
     ammend
     adds moving data to the bottom of new file
@@ -147,123 +145,85 @@ grep
     cat oldfile >> newfile 
         keeps oldfile 
 
+|
+    pipe takes the output of one command and sends it as the input of a second command
+        how many sequences are in this file?
+             cat SRR098026.fastq | wc -l
 
-WHEN VIEWING A FAST Q
+echo 
+    prints text or variables to terminal
+    can add text to file with >> or replace text within a file with >
 
-    cat views all
-    less views "less" content
-    head views top part
-    tails views bottom part
+    can show you what will occur in a command 
+        echo mv oldfile newfile
+            shows you what the change would be 
 
-    Fastq format:
-        Title
-        Sequences
-        + and then the title again for space
-        quality score
-
-***TIPS
-
-q to exit
-command c to exit 
-
-
-
-What command/commands would you use to find the line number in your history for the command that listed all the '.fastq' files using the absolute path. 
-    history | grep -n '\.fastq'
-
-**** "ls" lists files and directories
-**** "history | grep" lists prior commands or code that has been typed
-
-
-
-
-
-
-
-To navigate back to a previous command and run it
-    !n where n=line number
-
-../
-    navigates back 
-
-
-
-
-
-
-
-  
-
-    concatinate - print whole file to screen
-        two fast qs and conbine them cat command file 1 file 2
-
-head- first few lines
--n#
-
-
-
-To list the amount of lines in fast q
-        wc -l
-
-
-
-
-
-
-
-wget or curl with the website at the end- both grab files from web and save it to 
-
-
-
-cat "good link" > "bad link"
-    this redirects it to the other one, but combines them 
-
-
-    any questions about the commands, use "man"
-
-    head -n1 -gives first line  
-    pipe=|
-    tr - find and replace --> use '' for what to find and what to replace 
-
-    want to find 'plus' from last line
-
-    command f to replace- arrow on right then the logo on the right to replace all
-
-
-
- 
-    
-    
-
-
- 
-
- 
-
-   
-
-   
-
-    | the pipe!
-
-        takes the output of one command and sends it as the input of a second command
-
-        example
-            how many sequences are in this file?
-
-                cat SRR098026.fastq | wc -l
-
-    cut will remove 
-    -d is the deliminator with a given ''
-    -f# is the fields at which there was a cut 
+cut 
+    will remove 
+        -d is the deliminator with a given ''
+        -f# is the fields at which there was a cut 
 
     for example, 
     ls *.txt | cut -d'.' -f1
+            this lists all files with .txt but only the first field, what is the text before the first .
 
-    this takes all files with .txt at the end and cuts it at the period
-    then it will list the field 1, so the field before the period, field 2 would list txt
+        this takes all files with .txt at the end and cuts it at the period
+        then it will list the field 1, so the field before the period, field 2 would list txt
 
-    LOOPS
+
+WHAT IS * ?
+
+    this is the special wildcard
+
+    if * is BEFORE something, it will tell give you all the files/directories that end with that
+        ls /bin/*.txt    
+                lists all the files with .txt at the end 
+    
+    if * is AFTER something, it will tell give you all the files that start with that
+        ls /bin/file*
+                lists all the "file" 
+    
+    if * is before and after, it will give you all of the things that contain what is between the *
+        ls /bin/*a*
+                lists all the things in bin containing a
+
+
+***VIEWING A FAST Q
+
+    cat views all
+        should not use
+
+    less views "less" content
+        -S chops long lines instead of wrapping the text
+        type in the specific phrase to search for it
+        g jump to top
+        G jump to bottom
+        q quit
+
+    head views top part
+        -n #  shows the specific number of lines (line*4 because each fastq is 4 lines)
+            head -n 4 SRR098026.fast q 
+                shows the first line of fastq file
+
+    tails views bottom part
+         -n #  shows the specific number of lines (line*4 because each fastq is 4 lines)
+            tail -n 8 SRR098026.fastq
+                shows the last two lines of the fastq file
+
+    zcat allows viewing of a compressed .gz fastq file
+        pipe this command for specific viewing function
+            zcat file.gz | head
+    unzip allows for viewing of a compressed .zip fastq file
+            unzip file.zip | head
+
+
+    Fastq format:
+        @ Title length=
+        Sequences
+        + and then the title again for space length=
+        quality score
+
+***LOOPS
 
     $ for 
     >do
@@ -283,30 +243,61 @@ $ for starts the loop,
         looks for every file in this folder that ends in .txt and puts 
         in a temperary bucket called filename 
 
->do>  action
+    >do>  action
 
-name=$ (down below)
-    creates a variable
+    name=$ (down below)
+        creates a variable
 
-(basename ${filename} .txt)
+    (basename ${filename} .txt)
 
-    whats in the perentheses before
+        whats in the perentheses before
 
-    strips the extension, takes the current file (ex. sample_1.txt) and 
-    removes the .txt (sample_1)
+        strips the extension, takes the current file (ex. sample_1.txt) and 
+        removes the .txt (sample_1)
 
->mv ${filename} ${name}_2019.txt
+    >mv ${filename} ${name}_2019.txt
 
-    renames -new name + _2019.txt
-    for example sample_1_2019.txt
+        renames -new name + _2019.txt
+        for example sample_1_2019.txt
 
->done finalizes changes and closes loop
-
-adding empty directories 
+    >done finalizes changes and closes loop
 
 
 
-branch help
+***TIPS
+
+q to exit
+control c to exit 
+
+  any questions about the commands, use "man"
+
+To navigate back to a previous command and run it
+    !n where n=line number
+
+../
+    navigates back
+
+    for example, if in a directory but need to get back to a previous one, 
+        cd ../directory
+    can be used many times to keep going back one
+        cd ../../directory
+
+    for example, 
+    if in gen711-811/gen711-811-example and want to go to gen711-811/prac_exam_2026,
+
+    cd ../prac_exam_2026
+
+
+***Uploading something from a website 
+    wget or curl with the website at the end- both grab files from web and save it to 
+
+
+    
+
+
+
+
+***BRANCH FUNCTIONS
 
 clean working directory, branch is behind or ahead of main branch 
 git stash
@@ -320,6 +311,9 @@ git stash pop
 
 
 
+
+***other misc things that might help
+
 run something in background
     command z
         pauses code
@@ -332,3 +326,89 @@ run something in background
 screen
     pause and go back to terminal
     make sure to define variables again
+
+
+
+
+  tr - find and replace --> use '' for what to find and what to replace 
+
+    want to find 'plus' from last line
+
+    command f to replace- arrow on right then the logo on the right to replace all
+
+
+
+
+
+****LAST PRAC EXAM ANSWERS
+---
+
+1. Use an absolute path to change your current working directory to the 'prac_exam' directory that you just cloned (2 points). 
+  
+    ../prac_exam_2026
+  
+2. From 'prac_exam' directory, make the following directory structure in a single command: `data/untrimmed_fastq` (2 points, -1 point if you need to use 2 commands for this. Hint: There is a flag/option that lets you create nested directories all at once.)
+
+    mkdir -p data/untrimmed_fastq
+
+3. Copy the two fastq files in the `/tmp/Gen711-811_data` directly into your `untrimmed_fastq` directory without changing your current directory. (2 points, partial credit if you need to change directories first. Multiple correct answers)
+
+    cp /tmp/Gen711-811_data/* ../untrimmed_fastq
+  
+4. List all the hidden files in this repo. Paste the command below (2 points)
+    
+    ls -a
+
+5. Use a relative path to change your current working directory to the `untrimmed_fastq` directory. (2 points)
+
+    ../untrimmed_fastq
+
+6. These are paired-end FASTQ files from an *E. coli* long-term evolution experiment. To confirm the files look ok, view one of them and paste the top 4 lines below. (4 points, Hint: These files are gzip-compressed. Multiple correct answers)
+
+    zcat fastq | head -n 4
+
+
+7. How large (file size) are the two uncompressed fastq files? Use a single command with appropriate options to show the file sizes in a human-readable format (e.g., MB). Paste the command and output below. (2 points)
+
+    gzip -l untrimmed_fastq/*.fastq.gz
+
+
+8. For each fastq, how many quality score lines have the '@' symbol in them? To answer this, use one line of piped bash commands for each fastq, and the output should be a single number.(2 points) 
+
+    zcat untrimmed_fastq/file_R1.fastq.gz | grep -A 1 "^+" | grep -v "^+" | grep -c "@"
+    zcat untrimmed_fastq/file_R2.fastq.gz | grep -A 1 "^+" | grep -v "^+" | grep -c "@"
+
+9. How many reads have 15 or more uncalled bases (`NNNNNNNNNNNNNNN`) in `SRR2584863_1.fastq`? Count WITHOUT making a new file (4 points)
+
+    grep -c "N{15,}" SRR2584863_1.fastq
+
+10. Make a single fasta file from the two fastqs using the reads found in the question above, and their respective info lines. Name the new file 'badreads.fasta' in the 'untrimmed_fastq' directory.  (4 points)
+
+    grep -B 1 -E "N{15,}" ../untrimmed_fastq/SRR2584863_1.fastq | grep -v "^--" | tr '@' '>' > ../untrimmed_fastq/badreads.fasta
+
+11. Activate the conda 'genomics' environment that contains `fastqc` and confirm where `fastqc` is installed. Paste the command and its output below. (2 points)
+    conda activate genomics 
+    which fastq
+
+
+12. Run `fastqc` on `SRR2584863_1.fastq`. Then, create a `results/fastqc_untrimmed_reads` directory and move both the `.zip` and `.html` output files into it — all without leaving your `untrimmed_fastq` directory. Paste all commands used. (4 points)
+
+    fastqc SRR2584863_1.fastq
+    mkdir -p ../results/fastqc_untrimmed_reads
+    mv SRR2584863_1_fastqc.html SRR2584863_1_fastqc.zip ../results/fastqc_untrimmed_reads/
+
+
+13. Without changing directories, what is the 100th line of the file `SRR2584863_1.trim.fastq` in your `trimmed_fastq` directory? (2 points) 
+
+    head -n 100 ../trimmed_fastq/SRR2584863_1.trim.fastq | tail -n 1
+
+14. Run `md5sum` on `SRR2584863_1.fastq`. Then run it again, redirecting the output to a new file called `my_md5sums.txt`. Next, run `md5sum` on `SRR2584863_2.fastq` and **append** it to `my_md5sums.txt`. Finally, append your name to the end of `my_md5sums.txt`. Paste all commands used. (4 points)
+
+    md5sum SRR2584863_1.fastq
+    md5sum SRR2584863_1.fastq > my_md5sums.txt
+    md5sum SRR2584863_2.fastq >> my_md5sums.txt
+    echo "Your Name" >> my_md5sums.txt
+
+15. Push all of the new files that you created to your github repo using vscode's github side bar (4 points). 
+---
+
